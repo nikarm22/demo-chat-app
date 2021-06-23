@@ -3,18 +3,19 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import ListItemText from '@material-ui/core/ListItemText';
 import React from 'react';
-import { IFriend } from '../../types';
+import { IFriend } from '../../../../models/friend';
 
 interface IFriendsListItemProps {
     data: IFriend;
     isActive: boolean;
+    onClick?: () => void;
 }
 
 const FriendsListItem: React.FC<IFriendsListItemProps> = props => {
-    const { data, isActive } = props;
+    const { data, isActive, onClick } = props;
 
     return (
-        <ListItem button selected={isActive}>
+        <ListItem button selected={isActive} onClick={onClick}>
             <ListItemAvatar>
                 <Avatar
                     alt={`Photo of ${data.name}`}

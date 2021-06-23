@@ -1,14 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Route } from 'react-router-dom';
 
-import Application from './components/Application';
+import Application from './components/Application/Application';
+import { MessagesContextProvider } from './contexts/Messages';
+import reportWebVitals from './reportWebVitals';
 
 import './index.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Application />
+    <BrowserRouter>
+      <Route path={['/:id', '/']}>
+        <MessagesContextProvider>
+          <Application />
+        </MessagesContextProvider>
+      </Route>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

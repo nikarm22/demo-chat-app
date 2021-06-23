@@ -2,7 +2,7 @@ import { Chip, makeStyles, Theme } from '@material-ui/core';
 import clsx from 'clsx';
 import React from 'react';
 
-interface IMessage {
+interface IMessageProps {
     side: 'left' | 'right';
     timestamp: string;
     children: string;
@@ -30,8 +30,8 @@ const useStyles = makeStyles((theme: Theme) => ({
     }
 }));
 
-const Message: React.FC<IMessage> = (props) => {
-    const { side, timestamp, children } = props;
+const Message: React.FC<IMessageProps> = (props) => {
+    const { side, children } = props;
     const classes = useStyles();
 
     return <Chip
