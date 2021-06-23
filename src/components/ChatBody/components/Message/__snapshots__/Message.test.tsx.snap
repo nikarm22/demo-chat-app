@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Message /> should render the message on correct side 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiChip-root makeStyles-root-4 makeStyles-right-6 MuiChip-colorPrimary"
+    data-testid="message"
+  >
+    <span
+      class="MuiChip-label"
+    >
+      test
+    </span>
+  </div>
+</DocumentFragment>
+`;

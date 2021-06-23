@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MessageInput /> should match the snapshot 1`] = `
+<DocumentFragment>
+  <form
+    class="MuiFormControl-root makeStyles-root-1"
+  >
+    <div
+      class="MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-input-2 Mui-focused Mui-focused MuiInputBase-formControl MuiInput-formControl MuiInputBase-adornedEnd"
+      data-testid="message-input"
+    >
+      <input
+        aria-invalid="false"
+        class="MuiInputBase-input MuiInput-input MuiInputBase-inputAdornedEnd"
+        name="message"
+        type="text"
+        value=""
+      />
+      <div
+        class="MuiInputAdornment-root MuiInputAdornment-filled MuiInputAdornment-positionEnd"
+      >
+        <button
+          class="MuiButtonBase-root MuiIconButton-root"
+          data-testid="send-message"
+          tabindex="0"
+          type="submit"
+        >
+          <span
+            class="MuiIconButton-label"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"
+              />
+            </svg>
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+    </div>
+  </form>
+</DocumentFragment>
+`;

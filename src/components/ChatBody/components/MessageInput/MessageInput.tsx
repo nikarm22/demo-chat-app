@@ -1,20 +1,12 @@
 import { FormControl, Input, InputAdornment } from '@material-ui/core';
-import { IconButton, makeStyles } from '@material-ui/core';
+import IconButton from '@material-ui/core/IconButton';
 import SendIcon from '@material-ui/icons/Send';
 import React, { useCallback, useState } from 'react';
+import { useStyles } from './MessageInput.styles';
 
 interface IMessageInputProps {
     onSend?: (message: string) => void;
 }
-
-const useStyles = makeStyles(() => ({
-    root: {
-        display: 'flex',
-    },
-    input: {
-        flex: 1,
-    },
-}));
 
 const MessageInput: React.FC<IMessageInputProps> = props => {
     const { onSend } = props;
@@ -27,8 +19,10 @@ const MessageInput: React.FC<IMessageInputProps> = props => {
 
     const handleSubmit = useCallback((event) => {
         event.preventDefault();
-        onSend?.(currentMessage);
-        setCurrentMessage('');
+        if(currentMessage.trim().length) {
+            onSend?.(currentMessage.trim());
+            setCurrentMessage('');
+        }
     }, [currentMessage, onSend]);
 
     return (
@@ -39,9 +33,11 @@ const MessageInput: React.FC<IMessageInputProps> = props => {
                 autoFocus
                 value={currentMessage}
                 onChange={handleChange}
+                data-testid="message-input"
                 endAdornment={
                     <InputAdornment position="end">
                         <IconButton
+                            data-testid="send-message"
                             type="submit"
                         >
                             <SendIcon />

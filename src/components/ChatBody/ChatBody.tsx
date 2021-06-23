@@ -1,33 +1,12 @@
-import { makeStyles, Theme, Divider, Typography } from '@material-ui/core';
+import Divider from '@material-ui/core/Divider';
+import Typography from '@material-ui/core/Typography';
 import React from 'react';
 import { useMessages } from '../../contexts/Messages';
+import { useStyles } from './ChatBody.styles';
 import { Message } from './components/Message/Message';
 import { MessageInput } from './components/MessageInput/MessageInput';
 
-interface IChatBody {
-
-}
-
-const useStyles = makeStyles((theme: Theme) => ({
-    root: {
-        display: 'flex',
-        flexDirection: 'column',
-        height: '100%',
-    },
-    messages: {
-        padding: theme.spacing(1),
-        display: 'flex',
-        flexDirection: 'column-reverse',
-        flex: 1,
-        overflowY: 'auto',
-    },
-    inputBox: {
-        height: '32px',
-        padding: theme.spacing(1),
-    },
-}));
-
-const ChatBody: React.FC<IChatBody> = props => {
+const ChatBody: React.FC = () => {
     const classes = useStyles();
     const { currentMessages, sendMessageToCurrentFriend } = useMessages();
 
